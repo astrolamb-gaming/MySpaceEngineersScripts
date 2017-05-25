@@ -5,10 +5,10 @@
 public void Land() {
   var lg = (IMyLandingGear) GridTerminalSystem.GetBlockWithName("Landing Gear");
   var rc = (IMyRemoteControl) GridTerminalSystem.GetBlockWithName("Remote Control);
-  var sensor = (IMySensor) GridTerminalSystem.GetBlockWithName("Sensor");
+  var sensor = (IMySensorBlock) GridTerminalSystem.GetBlockWithName("Sensor");
   
   if (sensor == null) {
-    var sensor = (IMySensor) GridTerminalSystem.GetBlockWithName("LandingSensor");
+    var sensor = (IMySensorBlock) GridTerminalSystem.GetBlockWithName("LandingSensor");
     if (sensor == null) {
       return;
     }
@@ -17,6 +17,7 @@ public void Land() {
     
     
  } else {
+    // Happens first time program is run on the craft.
     sensor.SetCustomName("LandingSensor");
  }
   
